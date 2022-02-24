@@ -1,0 +1,303 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #181a1b;
+}
+
+body * {
+    color: #eee;
+}
+
+:root {
+    --link-blue: rgb(40, 126, 255);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #eee;
+}
+
+input {
+    outline: none;
+    color: #000;
+}
+
+.main-heading {
+    max-width: 520px;
+    text-align: center;
+    margin: 15% auto 0 auto;
+}
+
+.main-heading h1 {
+    /* font-family: Roboto, "Ubuntu", Arial, sans-serif; */
+    font-size: 110px;
+    margin-bottom: 2.2rem;
+}
+
+.input-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.input-wrapper i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.input-wrapper input {
+    width: 100%;
+    height: 2.8rem;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 0 10px 0 45px;
+    font-size: 1.4rem;
+}
+
+.sub-heading {
+    position: absolute;
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sub-heading>h1 {
+    font-size: 40px;
+}
+
+#search-view .input-wrapper {
+    max-width: 100%;
+    margin: 0;
+}
+
+#search-view .input-wrapper input {
+    font-size: 1.3rem;
+}
+
+#search-view .container {
+    max-width: 700px;
+    margin: 20px auto auto 220px;
+}
+
+.top-layer {
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.bottom-layer ul {
+    margin: 10px;
+    padding: 0;
+}
+
+.bottom-layer ul>li {
+    padding-right: 20px;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.bottom-layer ul>li:hover {
+    cursor: pointer;
+}
+
+.divider {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+ }
+
+.search-content {
+    font-family: Roboto, "Ubuntu", Arial, sans-serif;
+}
+
+#result-info {
+    margin-top: 35px;
+}
+
+.search-content>li {
+    margin: 20px 0;
+    position: relative;
+}
+
+.search-content .link {
+    display: block;
+    opacity: 0.7;
+    color: #eee;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.title {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--link-blue);
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+.site-content {
+    font-weight: normal;
+    opacity: 0.7;
+}
+
+
+.correlation {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0.6;
+}
+
+.more {
+    display: flex;
+    font-size: 1.6rem;
+    margin: 60px auto 50px auto;
+    width: fit-content;
+    font-weight: 600;
+}
+
+
+.more ul li {
+    display: inline-block;
+    text-align: center;
+}
+
+.more ul li div:last-child {
+    font-size: 1rem;
+    color: var(--link-blue);
+}
+
+.more ul li:hover div:last-child {
+    text-decoration: underline;
+}
+
+.more>span:first-child,
+.more ul li:last-of-type {
+    margin-right: 5px;
+}
+
+.next {
+    text-align: center;
+    margin-left: 10px;
+}
+
+.next * {
+    color: var(--link-blue);
+    font-size: 1rem;
+}
+
+.next div:first-child {
+    margin-top: 8px;
+}
+
+.next div:last-child {
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+.next:hover div:last-child {
+    text-decoration: underline;
+}
+
+
+.settings label{
+    display: inline-block;
+    width: 200px;
+}
+
+.settings input[type="number"] {
+    width: 75px;
+}
+
+.settings button {
+    background-color: #eee;
+    color: #000;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+}
+
+.settings button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.current-page {
+    color: red;
+}
+
+
+lds-dual-ring {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.lds-dual-ring:after {
+    position: absolute;
+    top: -5px;
+    right: -60px;
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+  
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.popup {
+    position: fixed;
+    z-index: 100;
+    border-radius: 30px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(41, 146, 216);
+    color: #eee;
+}

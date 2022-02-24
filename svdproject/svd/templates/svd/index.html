@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'svd/style.css' %}">
+</head>
+
+<body>
+    <div id="home" class="container">
+        <header class="main-heading">
+            <h1>SearchVD</h1>
+        </header>
+        <form>
+            <div class="input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="search" class="main-search" name="search-bar" placeholder="Search BBC news" autofocus>
+            </div>
+        </form>
+    </div>
+
+    <div id="search-view" style="display: none">
+        <nav class="menu container">
+            <div class="top-layer">
+                <header class="sub-heading">
+                    <h1>SearchVD</h1>
+                </header>
+                <form>
+                    <div class="input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="search" class="main-search" name="search-bar" placeholder="Search BBC news">
+                    </div>
+                </form>
+                <div id="loader" class="lds-dual-ring" style="visibility: hidden"></div>
+            </div>
+            <div class="bottom-layer">
+                <ul class="flex-row">
+                    <li onclick="toggleChart()">stats</li>
+                    <li onclick="toggleSettings()" id="settings">settings</li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="settings container" style="display: none">
+            <form>
+                <div>
+                    <label for="tbd">term-by-document</label>
+                    <input type="radio" name="mode" value="0" id="tbd">
+                </div>
+                <div>
+                    <label for="tbd-idf">term-by-document IDF</label>
+                    <input type="radio" name="mode" value="1" id="tbd-idf">
+                </div>
+                <div>
+                    <label for="svd">SVD low rank</label>
+                    <input type="radio" name="mode" value="2" id="svd">
+                </div>
+                <div>
+                    <label for="svd-idf">SVD IDF low rank</label>
+                    <input type="radio" name="mode" value="3" id="svd-idf">
+                </div>
+                <div>
+                    <label for="svd-order">Low rank order</label>
+                    <input type="number" name="svd-order" id="svd-order" min=1>
+                </div>
+                <button type="submit">Change</button>
+            </form>
+        </div>
+
+        <div id="chart-wrapper" class="container">
+            <div id="chartContainer"></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <main class="container">
+            <h3 id="result-info"></h3>
+            <ul class="search-content">
+            </ul>
+        </main>
+
+        <footer class="container">
+            <div class="more">
+
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="{% static 'svd/main.js' %}"></script>
+</body>
+
+</html>
